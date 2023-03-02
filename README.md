@@ -1,0 +1,40 @@
+# Bisection-Method-Code-on-MATLAB
+This is a code written on MATLAB and simply solve the problem using Bisection method. 
+clc
+clear all
+close all
+
+disp('This is a code for Bisection Method')
+
+a = input('Enter left number = ')
+b = input('Enter right number = ')
+
+n = input('Enter no of iterations = ')
+
+f = @(x) x.^3+7*x-5
+fplot(f,[a,b],1000)
+grid on
+
+hold on
+if (f(a)*f(b) < 0)
+    for i = 1:n
+        m = (a+b)/2;
+        fprintf('p%d=%.5f\n',i,m)
+        
+        if (f(m)*f(a)<0)
+            b = m;
+        else
+            a = m;
+        end
+    end
+else
+    disp('There are no root')
+end
+
+y = feval(f,m)
+plot(m,y,'*')
+label = ('Root')
+text (m,y,label)
+
+
+% Bisection Method.
