@@ -2,7 +2,6 @@
 This is a code written on MATLAB and simply solve the problem using Bisection method. 
 clc
 clear all
-close all
 
 disp('This is a code for Bisection Method')
 
